@@ -1,11 +1,11 @@
 import React from 'react'
 
-const LoginComponent = () => {
+const Dashboard = () => {
     return (
         <div>
-
+sasa
         </div>
     )
 }
 
-export default LoginComponent
+export default Dashboard
