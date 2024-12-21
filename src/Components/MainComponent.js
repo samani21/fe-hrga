@@ -43,7 +43,7 @@ export const Menu = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 75%;
+    height: 65%;
 `;
 
 export const MenuItem = styled.div`

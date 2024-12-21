@@ -288,7 +288,7 @@ export const Shadow = styled.div`
   background: linear-gradient(0deg, #115E59 0%, rgba(17, 94, 89, 0) 100%);
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
 `;
 
 export const TextMobile = styled.div`
