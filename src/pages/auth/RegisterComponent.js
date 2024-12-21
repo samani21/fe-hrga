@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ButtonGoogle, ButtonLogin, FormInputLogin, FormLoginContainer, SpanAuth, SpanCreate, TextAuth, TextCreateAkun, TextGoogle, TextReset, TitleLogin, WrapperLogin } from '../../Components/auth/AuthComponent'
+import { ButtonGoogle, ButtonLogin, FormInputLogin, FormLoginContainer, SpanAuth, TextAuth, TextGoogle, TextReset, TitleLogin, WrapperLogin } from '../../Components/auth/AuthComponent'
 import { IconPassword, InputField, Label, Span, TextButtonWhite, TextGray } from '../../Components/AllComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
