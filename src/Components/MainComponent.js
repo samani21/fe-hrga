@@ -9,6 +9,9 @@ export const SidebarContainer = styled.div`
     flex-direction: column;
     padding:20px;
     border-right: 1px solid var(--Color-Primitive-Neutral-neutral-200, #E5E5E5);
+    @media (max-width: 500px) {
+        display: none;
+    }
 `;
 
 export const SidebarHeader = styled.div`
@@ -154,6 +157,10 @@ export const Button = styled.button`
 export const AppContainer = styled.div`
     display: flex;
     height: 100vh;
+    @media (max-width: 500px) {
+        display: grid;
+        justify-content:normal;
+    }
 `;
 
 export const MainContent = styled.div`
@@ -161,11 +168,13 @@ export const MainContent = styled.div`
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    height: 100%;
 `;
 
 export const ContentArea = styled.div`
     flex-grow: 1;
     padding: 20px;
+    height: 77vh;
 `;
 
 export const FooterSidebar = styled.div`
@@ -229,4 +238,69 @@ export const EmailProfil = styled.p`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: var(--Color-Primitive-Brand-brand-500, #14B8A6);
+`;
+
+export const NavbarMobile = styled.div`
+    display: none;
+    @media (max-width: 500px) {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    display: flex;
+    overflow-x: auto; /* Aktifkan pengguliran horizontal */
+    overflow-y: hidden; /* Sembunyikan pengguliran vertikal */
+    -ms-overflow-style: none; /* Untuk Internet Explorer dan Edge */
+    scrollbar-width: none;
+    border-top: 1px solid var(--Color-Primitive-Neutral-neutral-200, #E5E5E5)
+}
+
+`;
+
+export const MenuMobile = styled.div`
+width: auto;
+height: Hug (40px)px;
+padding: 10px 0px 0px 0px;
+gap: 8px;
+border-radius: var(--Radiusradius-1);
+opacity: 0px;
+margin-left: 10px;
+`;
+
+export const NavLinksMobile = styled(Link)`
+    display: flex;
+    width: Fill (112px)px;
+    height: 40px;
+    padding: 0px 10px 0px 10px;
+    gap: 8px;
+    border-radius: var(--Radiusradius-1);
+    opacity: 0px;
+    color: #A3A3A3;
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+    font-size: .82em;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    &.active {
+        background: #c4fff1;
+        color: #0D9488;
+    }
+
+
+`;
+
+export const NavIconMobile = styled.img`
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: .2em;
+    -webkit-mask: url(${props => props.icon}) no-repeat center;
+    mask: url(${props => props.icon}) no-repeat center;
+    background-color: ${props => props.color ? props.color : "#A3A3A3"};
+
+    
+    &.active {
+        color: #0D9488;
+        background: #0D9488;
+    }
+
 `;

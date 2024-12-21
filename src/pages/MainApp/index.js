@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, NameProfil, NavIcon, NavLinks, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
+import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, MenuMobile, NameProfil, NavbarMobile, NavIcon, NavIconMobile, NavLinks, NavLinksMobile, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
 import { iconBadge, iconCalendMonth, iconCloseSidebar, iconDashboard, iconEnterprise, iconLogout, iconMoneyBag, iconNotif, iconPace, iconProblem, iconSetting } from '../../Assets'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../HR/dashboard'
@@ -115,7 +115,7 @@ const MainApp = () => {
             <MainContent>
                 <TopBarContainer>
                     <ShortcutButtons>
-                        <TextTopbar>Shortcut:</TextTopbar>
+                        {/* <TextTopbar>Shortcut:</TextTopbar> */}
                         <Button>Absensi</Button>
                         <Button>Ajukan Cuti</Button>
                     </ShortcutButtons>
@@ -134,6 +134,18 @@ const MainApp = () => {
                     </Routes>
                 </ContentArea>
             </MainContent>
+            <NavbarMobile>
+                {
+                    menu?.map((item, index) => (
+                        item?.text !== 'Setting' && item?.text !== 'Keluar' ?
+                            <MenuMobile onClick={() => handleActiveMenu(item?.text)} key={index}>
+                                <NavLinksMobile to={item?.url} className={activeMenu === item?.text ? 'active' : ""}>
+                                    <NavIconMobile icon={item?.icon} className={activeMenu === item?.text ? 'active' : ""} /><span>{item?.text}</span>
+                                </NavLinksMobile>
+                            </MenuMobile> : ""
+                    ))
+                }
+            </NavbarMobile>
         </AppContainer>
     )
 }
