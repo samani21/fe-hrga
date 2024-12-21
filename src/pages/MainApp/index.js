@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, MenuMobile, NameProfil, NavbarMobile, NavIcon, NavIconMobile, NavLinks, NavLinksMobile, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
+import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, FooterSidebarDesktop, FooterSidebarMobile, Image, MainContent, Menu, MenuItem, MenuMobile, NameProfil, NavbarMobile, NavIcon, NavIconMobile, NavLinks, NavLinksMobile, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
 import { iconBadge, iconCalendMonth, iconCloseSidebar, iconDashboard, iconEnterprise, iconLogout, iconMoneyBag, iconNotif, iconPace, iconProblem, iconSetting } from '../../Assets'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../HR/dashboard'
@@ -70,9 +70,13 @@ const menu = [
 
 const MainApp = () => {
     const [activeMenu, setActiveMenu] = useState('Dashboard');
+    const [isFooterMenuOpen, setIsFooterMenuOpen] = useState(false);
     const handleActiveMenu = (menu) => {
         setActiveMenu(menu)
     }
+    const toggleFooterMenu = () => {
+        setIsFooterMenuOpen(!isFooterMenuOpen);
+    };
     return (
         <AppContainer>
             <SidebarContainer>
@@ -94,22 +98,46 @@ const MainApp = () => {
                     }
                 </Menu>
                 <FooterSidebar>
-                    {
-                        menu?.map((item, index) => (
-                            item?.text === 'Setting' || item?.text === 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
-                                <NavLinks to={item?.url} className={activeMenu === item?.text ? 'active' : ""}>
-                                    <NavIcon icon={item?.icon} className={activeMenu === item?.text ? 'active' : ""} /><span>{item?.text}</span>
-                                </NavLinks>
-                            </MenuItem> : ""
-                        ))
-                    }
-                    <CardProfil>
+                    <FooterSidebarDesktop>
+                        {
+                            menu?.map((item, index) => (
+                                item?.text === 'Setting' || item?.text === 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
+                                    <NavLinks to={item?.url} className={activeMenu === item?.text ? 'active' : ""}>
+                                        <NavIcon icon={item?.icon} className={activeMenu === item?.text ? 'active' : ""} /><span>{item?.text}</span>
+                                    </NavLinks>
+                                </MenuItem> : ""
+                            ))
+                        }
+                        <CardProfil>
+                            <BingkatFoto></BingkatFoto>
+                            <Profil>
+                                <NameProfil>James Geidt</NameProfil>
+                                <EmailProfil>james@hrga.com</EmailProfil>
+                            </Profil>
+                        </CardProfil>
+                    </FooterSidebarDesktop>
+                    <FooterSidebarMobile onClick={toggleFooterMenu}>
                         <BingkatFoto></BingkatFoto>
-                        <Profil>
-                            <NameProfil>James Geidt</NameProfil>
-                            <EmailProfil>james@hrga.com</EmailProfil>
-                        </Profil>
-                    </CardProfil>
+                        {
+                            isFooterMenuOpen && <div className='burgerProfil'>
+                                <Profil>
+                                    <NameProfil>James Geidt</NameProfil>
+                                    <EmailProfil>james@hrga.com</EmailProfil>
+                                </Profil>
+                                <div>
+                                    <div>
+                                        s
+                                    </div>
+                                    <div>
+                                        s
+                                    </div>
+                                    <div>
+                                        s
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </FooterSidebarMobile>
                 </FooterSidebar>
             </SidebarContainer>
             <MainContent>

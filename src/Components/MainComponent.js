@@ -2,15 +2,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
-    width: 200px;
+      width: 200px;
     background: var(--Color-Primitive-Brand-brand-900, #134E4A);
     color: white;
     display: flex;
     flex-direction: column;
-    padding:20px;
+    padding: 20px;
     border-right: 1px solid var(--Color-Primitive-Neutral-neutral-200, #E5E5E5);
+    transition: width 0.3s;
+
+    @media (max-width: 900px) {
+        width: 60px; /* Hanya ikon yang ditampilkan */
+    }
+
     @media (max-width: 500px) {
-        display: none;
+        display: none; /* Sidebar tersembunyi di layar kecil */
     }
 `;
 
@@ -67,28 +73,89 @@ export const MenuItem = styled.div`
 `;
 export const NavLinks = styled(Link)`
     display: flex;
+    align-items: center;
     color: #0D9488;
     text-decoration: none;
-    align-items: center;
-    cursor: pointer;
-    font-size: .82em;
+    font-size: 0.82em;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+
+    span {
+        display: inline-block;
+        margin-left: 10px;
+        white-space: nowrap;
+        opacity: 1;
+        transition: opacity 0.3s, visibility 0.3s;
+
+        @media (max-width: 900px) {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    &:hover span {
+        opacity: 1;
+        visibility: none;
+        @media (max-width: 900px) {
+            display: block;
+            position: absolute;
+            left: 60px; /* Posisi teks muncul di sebelah kanan ikon */
+            background: #134E4A;
+            padding: 5px 10px;
+            border-radius: 150px 0px 0px 150px; /* Melengkung hanya di sisi kanan */
+            color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    }
+
     &.active {
-        color: #ffffff
-    }
+        color: #ffffff;
 
-    @media screen and (max-width: 768px) {
-        float: left;
-        font-size: 0.8em;
-        padding: 1em 0.5em;
+        span {
+            color: #ffffff;
+        }
     }
+`;
 
-    @media screen and (max-width: 500px) {
-        flex-direction: column;
+export const FooterSidebarDesktop = styled.div`
+    @media (max-width: 900px) {
+        display: none;
+    }
+`;
+export const FooterSidebarMobile = styled.div`
+    display: none;
+    @media (max-width: 900px) {
+        display: block;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        
+        cursor: pointer;
     }
 
+    .burgerProfil{
+        @media (max-width: 900px) {
+           display: none;
+        }
+    }
+     .burgerProfil{
+        opacity: 1;
+        visibility: none;
+        @media (max-width: 900px) {
+            display: block;
+            position: absolute;
+            left: 120px; /* Posisi teks muncul di sebelah kanan ikon */
+            background: linear-gradient(267.17deg, #0D9488 0%, #115E59 100%);
+            padding: 5px 10px;
+            color: white;
+            height: auto;
+            width: 120px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            /* Membuat sisi kiri bawah lancip */
+            /* clip-path: polygon(100% 0%, 100% 46%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
+        }
+
+    }
 `;
 
 export const NavIcon = styled.img`
