@@ -24,7 +24,14 @@ export const SidebarHeader = styled.div`
 `;
 
 export const Image = styled.img`
-`
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: .2em;
+    -webkit-mask: url(${props => props.icon}) no-repeat center;
+    mask: url(${props => props.icon}) no-repeat center;
+    background-color: ${props => props.color ? props.color : "#ffffff"};
+
+`;
 
 
 export const TitleHeader = styled.p`
@@ -108,6 +115,9 @@ export const TopBarContainer = styled.div`
     padding: 0 20px;
     color: white;
     border-bottom: 1px solid var(--Color-Primitive-Neutral-neutral-200, #E5E5E5);
+    @media (max-width: 500px) {
+        background: #134E4A;
+    }
 `;
 
 export const TextTopbar = styled.p`
@@ -124,6 +134,9 @@ export const TextTopbar = styled.p`
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: var(--Color-Primitive-Neutral-neutral-900, #171717);
+    @media (max-width: 500px) {
+        display: none;
+    }
 `;
 
 export const ShortcutButtons = styled.div`
