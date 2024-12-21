@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Jadwal = () => {
     return (
         <div>
-            Dashboard
+            Jadwal
         </div>
     )
 }
 
-export default Dashboard
+export default Jadwal

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Dashboard = () => {
+const Pinjaman = () => {
     return (
         <div>
-            Dashboard
+            Pinjaman
         </div>
     )
 }
 
-export default Dashboard
+export default Pinjaman

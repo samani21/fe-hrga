@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Auth from './pages/auth';
-import Dashboard from './pages/HR/dashboard';
+import MainApp from './pages/MainApp';
 
 function App() {
   return (
     <Router>
       <Routes>
         {/* Route untuk halaman Login */}
-        <Route path="/" element={<Auth />} />
+        <Route path="/login" element={<Auth />} />
+        <Route path="/logout" element={<Auth />} />
         <Route path="/register" element={<Auth />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/*" element={<MainApp />} />
       </Routes>
     </Router>
   );
