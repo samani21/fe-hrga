@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ButtonGoogle, ButtonLogin, FormInputLogin, FormLoginContainer, SpanAuth, TextAuth, TextGoogle, TextReset, TitleLogin, WrapperLogin } from '../../Components/auth/AuthComponent'
+import { ButtonGoogle, ButtonLogin, FormInputLogin, FormLoginContainer, ImageAuth, SpanAuth, TextAuth, TextGoogle, TextReset, TitleLogin, WrapperLogin } from '../../Components/auth/AuthComponent'
 import { IconPassword, InputField, Label, Span, TextButtonWhite, TextGray } from '../../Components/AllComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
@@ -49,7 +49,7 @@ const RegisterComponent = () => {
             <TextGray style={{ marginTop: "20px", marginBottom: "20px" }}>atau</TextGray>
             <ButtonGoogle>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <img src={iconGoole} style={{ marginRight: "10px" }} />
+                    <ImageAuth src={iconGoole} style={{ marginRight: "10px" }} />
                     <TextGoogle>
                         Daftar dengan Google
                     </TextGoogle>

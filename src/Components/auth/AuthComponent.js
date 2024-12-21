@@ -189,6 +189,10 @@ cursor: pointer;
 }
 `;
 
+export const ImageAuth = styled.img`
+
+`;
+
 export const ButtonGoogle = styled.button`
 width: 100%;
 height: Hug (40px)px;

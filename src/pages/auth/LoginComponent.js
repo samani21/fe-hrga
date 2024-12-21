@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ButtonGoogle, ButtonLogin, FormInputLogin, FormInputLoginMobile, FormLoginContainer, IconWrapperAuth, InputContainerAuth, InputFieldAuth, LabelAuth, PilihanAuth, SpanAuth, SpanLoginMobile, TextAuth, TextGoogle, TextMobile, TextReset, TitleLogin, TitleLoginMobile, TitleLoginMobileContainer, WrapperLogin } from '../../Components/auth/AuthComponent'
+import { ButtonGoogle, ButtonLogin, FormInputLogin, FormInputLoginMobile, FormLoginContainer, IconWrapperAuth, ImageAuth, InputContainerAuth, InputFieldAuth, LabelAuth, PilihanAuth, SpanAuth, SpanLoginMobile, TextAuth, TextGoogle, TextMobile, TextReset, TitleLogin, TitleLoginMobile, TitleLoginMobileContainer, WrapperLogin } from '../../Components/auth/AuthComponent'
 import { IconPassword, InputField, Label, Span, TextButtonWhite, TextGray } from '../../Components/AllComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faEye, faEyeSlash, faLock } from '@fortawesome/free-solid-svg-icons'
@@ -75,7 +75,7 @@ const LoginComponent = () => {
                 <TextGray style={{ marginTop: "20px", marginBottom: "20px" }}>atau</TextGray>
                 <ButtonGoogle>
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                        <img src={iconGoole} style={{ marginRight: "10px" }} />
+                        <ImageAuth src={iconGoole} style={{ marginRight: "10px" }} />
                         <TextGoogle>
                             Masuk dengan Google
                         </TextGoogle>
