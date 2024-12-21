@@ -20,6 +20,10 @@ export const SidebarHeader = styled.div`
     margin-bottom: 20px;
 `;
 
+export const Image = styled.img`
+`
+
+
 export const TitleHeader = styled.p`
     width: 152px;
     gap: 0px;

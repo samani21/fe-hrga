@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, MainContent, Menu, MenuItem, NameProfil, NavIcon, NavLinks, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
+import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, NameProfil, NavIcon, NavLinks, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
 import { iconBadge, iconCalendMonth, iconCloseSidebar, iconDashboard, iconEnterprise, iconLogout, iconMoneyBag, iconNotif, iconPace, iconProblem, iconSetting } from '../../Assets'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../HR/dashboard'
@@ -10,7 +10,6 @@ import Cuti from '../HR/cuti'
 import Pinjaman from '../HR/pinjaman'
 import SuratPeringatan from '../HR/suratPeringatan'
 import Setting from '../HR/Setting'
-import Auth from '../auth'
 
 const menu = [
     {
@@ -81,14 +80,14 @@ const MainApp = () => {
                     <TitleHeader>
                         HRGA APPS
                     </TitleHeader>
-                    <img src={iconCloseSidebar} />
+                    <Image src={iconCloseSidebar} />
                 </SidebarHeader>
                 <Menu>
                     {
                         menu?.map((item, index) => (
-                            item?.text != 'Setting' && item?.text != 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
-                                <NavLinks to={item?.url} className={activeMenu == item?.text ? 'active' : ""}>
-                                    <NavIcon icon={item?.icon} className={activeMenu == item?.text ? 'active' : ""} /><span>{item?.text}</span>
+                            item?.text !== 'Setting' && item?.text !== 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
+                                <NavLinks to={item?.url} className={activeMenu === item?.text ? 'active' : ""}>
+                                    <NavIcon icon={item?.icon} className={activeMenu === item?.text ? 'active' : ""} /><span>{item?.text}</span>
                                 </NavLinks>
                             </MenuItem> : ""
                         ))
@@ -97,9 +96,9 @@ const MainApp = () => {
                 <FooterSidebar>
                     {
                         menu?.map((item, index) => (
-                            item?.text == 'Setting' || item?.text == 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
-                                <NavLinks to={item?.url} className={activeMenu == item?.text ? 'active' : ""}>
-                                    <NavIcon icon={item?.icon} className={activeMenu == item?.text ? 'active' : ""} /><span>{item?.text}</span>
+                            item?.text === 'Setting' || item?.text === 'Keluar' ? <MenuItem onClick={() => handleActiveMenu(item?.text)} key={index}>
+                                <NavLinks to={item?.url} className={activeMenu === item?.text ? 'active' : ""}>
+                                    <NavIcon icon={item?.icon} className={activeMenu === item?.text ? 'active' : ""} /><span>{item?.text}</span>
                                 </NavLinks>
                             </MenuItem> : ""
                         ))
@@ -120,7 +119,7 @@ const MainApp = () => {
                         <Button>Absensi</Button>
                         <Button>Ajukan Cuti</Button>
                     </ShortcutButtons>
-                    <img src={iconNotif} />
+                    <Image src={iconNotif} />
                 </TopBarContainer>
                 <ContentArea>
                     <Routes>
