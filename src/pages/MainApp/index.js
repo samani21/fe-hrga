@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, MenuMobile, NameProfil, NavbarMobile, NavIcon, NavIconMobile, NavLinks, NavLinksMobile, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TextTopbar, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
+import { AppContainer, BingkatFoto, Button, CardProfil, ContentArea, EmailProfil, FooterSidebar, Image, MainContent, Menu, MenuItem, MenuMobile, NameProfil, NavbarMobile, NavIcon, NavIconMobile, NavLinks, NavLinksMobile, Profil, ShortcutButtons, SidebarContainer, SidebarHeader, TitleHeader, TopBarContainer } from '../../Components/MainComponent'
 import { iconBadge, iconCalendMonth, iconCloseSidebar, iconDashboard, iconEnterprise, iconLogout, iconMoneyBag, iconNotif, iconPace, iconProblem, iconSetting } from '../../Assets'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from '../HR/dashboard'
